@@ -12,14 +12,12 @@ const config = {
   appId: "1:1093906803586:web:d551be3b160ed9b140bd9b",
   measurementId: "G-V732KRC4E5"
 };
-
+    
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
 
-    if (!userAuth) return;
 
-    const userRef = firebase.doc(`users/${userAuth.uid}`);
-
+    const userRef = firestore.doc(`users/${userAuth.uid}`);
     const snapShot = await userRef.get();
     
     if(!snapShot.exists) {
