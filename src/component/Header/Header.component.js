@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { connect } from "react-redux";
 import {ReactComponent as Logo} from '../../assets/Crown.svg';
 import { auth } from '../../Firebase/Firebase.utils';
 
@@ -27,4 +28,7 @@ const Header = ({ CurrentUser}) => (
         </div>
     </div>
 );
-export default Header;
+const mapStateToProps = state => ({
+    CurrentUser: state.user.currentUser
+});
+export default connect(mapStateToProps)(Header);
