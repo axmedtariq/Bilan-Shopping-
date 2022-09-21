@@ -4,11 +4,11 @@ import { addItemToCart } from "./Cart.utils";
 
 const INITIAL_STATE = {
 	hidden: true,
-	CartItems: []
+	cartItems: []
 };
 
 
-const CartReducer = (state = INITIAL_STATE, action) => {
+const cartReducer = (state = INITIAL_STATE, action) => {
 
 	switch(action.type) {
 
@@ -26,7 +26,7 @@ const CartReducer = (state = INITIAL_STATE, action) => {
 
 			...state,
 
-			CartItems : addItemToCart(state.CartItems,  action.payload)
+			cartItems : addItemToCart(state.cartItems,  action.payload)
 		}
 
 		default:
@@ -34,4 +34,4 @@ const CartReducer = (state = INITIAL_STATE, action) => {
 	}
 }
 
-export default CartReducer;
+export default cartReducer;
